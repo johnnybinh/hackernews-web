@@ -16,18 +16,91 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  @layer base {
+    :root {
+      /* Name: custom color palette
+         Author: Ilias Ism
+         URL: https://gradient.page */
+
+      /* CSS: .bg-gradient { background: var(--gradient) } */
+      --gradient: linear-gradient(to top left, #fe8c00, #f83600);
+
+      --background: 35 65% 4%;
+      --foreground: 35 10% 97.5%;
+
+      --muted: 35 50% 15%;
+      --muted-foreground: 35 10% 55%;
+
+      --popover: 35 45% 6.5%;
+      --popover-foreground: 35 10% 97.5%;
+
+      --card: 35 45% 6.5%;
+      --card-foreground: 35 10% 97.5%;
+
+      --border: 35 50% 15%;
+      --input: 35 50% 15%;
+
+      --primary: 35 100% 50%;
+      --primary-foreground: 35 10% 5%;
+
+      --secondary: 35 50% 15%;
+      --secondary-foreground: 35 10% 97.5%;
+
+      --accent: 35 50% 15%;
+      --accent-foreground: 35 10% 97.5%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 35 10% 97.5%;
+
+      --ring: 35 100% 50%;
+    }
+  }
+  .dark {
+    --gradient: linear-gradient(to top left, #e65c00, #f9d423);
+
+    --background: 25 65% 3.6%;
+    --foreground: 25 10% 97.25%;
+
+    --muted: 25 50% 13.5%;
+    --muted-foreground: 25 10% 54.5%;
+
+    --popover: 25 45% 5.8500000000000005%;
+    --popover-foreground: 25 10% 97.25%;
+
+    --card: 25 45% 5.8500000000000005%;
+    --card-foreground: 25 10% 97.25%;
+
+    --border: 25 50% 13.5%;
+    --input: 25 50% 13.5%;
+
+    --primary: 25 100% 45%;
+    --primary-foreground: 25 10% 97.25%;
+
+    --secondary: 25 50% 13.5%;
+    --secondary-foreground: 25 10% 97.25%;
+
+    --accent: 25 50% 13.5%;
+    --accent-foreground: 25 10% 97.25%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 25 10% 97.25%;
+
+    --ring: 25 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
